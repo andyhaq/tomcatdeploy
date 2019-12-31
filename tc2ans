@@ -1,0 +1,10 @@
+#!/bin/sh
+src=/var/lib/jenkins/workspace/tomcat-dploy/webapp/target/webapp.war
+dst=/tmp/webapp.war
+ip=10.0.0.62
+if [ -f $src ] ; then
+echo "file exists"
+scp $src ansadmin@$ip:$dst
+else
+echo file doesnot exist in $src;
+fi
